@@ -1,13 +1,13 @@
 var express = require('express'),
   app = express(),
+  var sql = require('mysql');
   port = process.env.PORT || 8100,
-  mongoose = require('mongoose'),
    Task = require('./api/models/doneModel'), //created model loading here
    bodyParser = require('body-parser');
-   
+
  // mongoose instance connection url connection
- mongoose.Promise = global.Promise;
- mongoose.connect('104.198.103.85');
+ mysql.Promise = global.Promise;
+ mysql.connect('104.198.103.85');
 
 
  app.use(bodyParser.urlencoded({ extended: true }));
